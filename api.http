@@ -2,7 +2,25 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-    "title": "Rock Rio",
-    "details": "Um evento para quem é apaixonado por música",
-    "maximumAttendees": 10000
+    "title": "New Event",
+    "details": null,
+    "maximumAttendees": 2
 }
+
+###
+
+POST http://localhost:3333/events/ad7745c4-10b2-41e9-afe0-b97def0d5e3c/attendees
+Content-Type: application/json
+
+{
+    "name": "Lucas de Lima",
+    "email": "lucaslnascimento010@gmail.com.br"
+}
+
+###
+
+GET http://localhost:3333/events/e62df4e4-3d15-4af1-972b-a238474dd583
+
+###
+
+GET http://localhost:3333/attendees/4/badge
