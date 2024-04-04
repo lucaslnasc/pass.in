@@ -2,14 +2,14 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-    "title": "New Event",
-    "details": null,
-    "maximumAttendees": 2
+    "title": "Rock Rio",
+    "details": "Travis Scott cantando FE!N",
+    "maximumAttendees": 10
 }
 
 ###
 
-POST http://localhost:3333/events/ad7745c4-10b2-41e9-afe0-b97def0d5e3c/attendees
+POST http://localhost:3333/events/0fced75c-6fbe-4f93-9483-8235e116a343/attendees
 Content-Type: application/json
 
 {
@@ -19,8 +19,16 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3333/events/e62df4e4-3d15-4af1-972b-a238474dd583
+GET http://localhost:3333/events/0fced75c-6fbe-4f93-9483-8235e116a343
 
 ###
 
-GET http://localhost:3333/attendees/4/badge
+GET http://localhost:3333/attendees/1/badge
+
+###
+
+GET http://localhost:3333/attendees/1/check-in
+
+###
+
+GET http://localhost:3333/events/0fced75c-6fbe-4f93-9483-8235e116a343/attendees?query=lucas
