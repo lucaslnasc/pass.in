@@ -43,3 +43,6 @@ O sistema fará um scan de credencial do participante para permitir a entrada no
 
 ## Executar o Prisma Studio
 - npm prisma studio
+
+## Documentação da API
+quando você iniciar a aplicação, coloque no seu navegador http://localhost:3333/docs/static/index.html para ter acesso a documentação da api do projeto
