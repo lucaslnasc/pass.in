@@ -1,0 +1,42 @@
+// Cria um novo evento com título, detalhes e número máximo de participantes
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+    "title": "Lollapalooza",
+    "details": "Festival de música",
+    "maximumAttendees": 200
+}
+
+###
+// Adiciona um participante a um evento específico (identificado pelo ID do evento)
+POST http://localhost:3333/events/3fa014e6-f6a3-4928-86ff-5732d1dccd90/attendees
+Content-Type: application/json
+
+{
+    "name": "Lucas Daniel",
+    "email": "lucasdaniel.unisales@outlook.com"
+}
+
+###
+
+// Obtém os detalhes de um evento específico (identificado pelo ID do evento)
+GET http://localhost:3333/events/3fa014e6-f6a3-4928-86ff-5732d1dccd90
+
+###
+
+// Obtém a lista de participantes de um evento específico (identificado pelo ID do participante)
+GET http://localhost:3333/attendees/11/badge
+
+###
+
+// Realiza o check-in de um participante em um evento específico (identificado pelo ID do participante)
+GET http://localhost:3333/attendees/11/check-in
+
+###
+
+// Obtém a lista de participantes de um evento específico com base em uma consulta (query string)
+GET http://localhost:3333/events/3fa014e6-f6a3-4928-86ff-5732d1dccd90/attendees?query=Lucas
+
+// a15df88b-d608-43cc-beca-8a457c296a92
+// 3fa014e6-f6a3-4928-86ff-5732d1dccd90
