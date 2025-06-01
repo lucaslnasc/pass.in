@@ -10,33 +10,32 @@ Content-Type: application/json
 
 ###
 // Adiciona um participante a um evento específico (identificado pelo ID do evento)
-POST http://localhost:3333/events/3fa014e6-f6a3-4928-86ff-5732d1dccd90/attendees
+POST http://localhost:3333/events/1525ddd3-5296-44cb-9ae9-9963ec4c558e/attendees
 Content-Type: application/json
 
 {
-    "name": "Lucas Daniel",
-    "email": "lucasdaniel.unisales@outlook.com"
+    "name": "Jhon Doe",
+    "email": "jhondoe.unisales@gmail.com"
 }
 
 ###
 
 // Obtém os detalhes de um evento específico (identificado pelo ID do evento)
-GET http://localhost:3333/events/3fa014e6-f6a3-4928-86ff-5732d1dccd90
+GET http://localhost:3333/events/1525ddd3-5296-44cb-9ae9-9963ec4c558e
 
 ###
 
 // Obtém a lista de participantes de um evento específico (identificado pelo ID do participante)
-GET http://localhost:3333/attendees/11/badge
+GET http://localhost:3333/attendees/1/badge
 
 ###
 
 // Realiza o check-in de um participante em um evento específico (identificado pelo ID do participante)
-GET http://localhost:3333/attendees/11/check-in
+GET http://localhost:3333/attendees/1/check-in
 
 ###
 
 // Obtém a lista de participantes de um evento específico com base em uma consulta (query string)
-GET http://localhost:3333/events/3fa014e6-f6a3-4928-86ff-5732d1dccd90/attendees?query=Lucas
+GET http://localhost:3333/events/1525ddd3-5296-44cb-9ae9-9963ec4c558e/attendees?
 
-// a15df88b-d608-43cc-beca-8a457c296a92
-// 3fa014e6-f6a3-4928-86ff-5732d1dccd90
+// 1525ddd3-5296-44cb-9ae9-9963ec4c558e

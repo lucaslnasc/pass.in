@@ -1,3 +1,6 @@
+import dayjs from "dayjs";
+import "dayjs/locale/pt-br";
+import relativeTime from "dayjs/plugin/relativeTime";
 import {
   ChevronLeft,
   ChevronRight,
@@ -6,15 +9,12 @@ import {
   MoreHorizontal,
   Search,
 } from "lucide-react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { IconButton } from "./icon-button";
 import { Table } from "./table/table";
-import { TableHeader } from "./table/table-header";
 import { TableCell } from "./table/table-cell";
+import { TableHeader } from "./table/table-header";
 import { TableRow } from "./table/table-row";
-import { ChangeEvent, useEffect, useState } from "react";
-import dayjs from "dayjs";
-import "dayjs/locale/pt-br";
-import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
 dayjs.locale("pt-br");
@@ -104,11 +104,15 @@ export function AttendeeList() {
   }
 
   function goToPreviousPage() {
-    setCurrentPage(page - 1);
+    if (page > 1) {
+      setCurrentPage(page - 1);
+    }
   }
 
   function goToNextPage() {
-    setCurrentPage(page + 1);
+    if (page < totalPages) {
+      setCurrentPage(page + 1);
+    }
   }
 
   return (
@@ -143,43 +147,41 @@ export function AttendeeList() {
           </tr>
         </thead>
         <tbody>
-          {attendees.map((ateendee) => {
-            return (
-              <TableRow key={ateendee.id}>
-                <TableCell>
-                  <input
-                    type="checkbox"
-                    className="size-4 bg-black/20 rounded border border-white/10"
-                  />
-                </TableCell>
-                <TableCell>{ateendee.id}</TableCell>
-                <TableCell>
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-white">
-                      {ateendee.name}
-                    </span>
-                    <span>{ateendee.email}</span>
-                  </div>
-                </TableCell>
-                <TableCell>{dayjs().to(ateendee.createdAt)}</TableCell>
-                <TableCell>
-                  {ateendee.checkedInAt === null ? (
-                    <span className="text-zinc-400">Não fez check-in</span>
-                  ) : (
-                    dayjs().to(ateendee.checkedInAt)
-                  )}
-                </TableCell>
-                <TableCell>
-                  <IconButton
-                    transparent
-                    className="bg-black/20 border border-white/10 rounded-md p-1.5"
-                  >
-                    <MoreHorizontal className="size-4" />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
-            );
-          })}
+          {attendees.map((attendee) => (
+            <TableRow key={attendee.id}>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  className="size-4 bg-black/20 rounded border border-white/10"
+                />
+              </TableCell>
+              <TableCell>{attendee.id}</TableCell>
+              <TableCell>
+                <div className="flex flex-col gap-1">
+                  <span className="font-semibold text-white">
+                    {attendee.name}
+                  </span>
+                  <span>{attendee.email}</span>
+                </div>
+              </TableCell>
+              <TableCell>{dayjs().to(attendee.createdAt)}</TableCell>
+              <TableCell>
+                {attendee.checkedInAt === null ? (
+                  <span className="text-zinc-400">Não fez check-in</span>
+                ) : (
+                  dayjs().to(attendee.checkedInAt)
+                )}
+              </TableCell>
+              <TableCell>
+                <IconButton
+                  transparent
+                  className="bg-black/20 border border-white/10 rounded-md p-1.5"
+                >
+                  <MoreHorizontal className="size-4" />
+                </IconButton>
+              </TableCell>
+            </TableRow>
+          ))}
         </tbody>
         <tfoot>
           <tr>

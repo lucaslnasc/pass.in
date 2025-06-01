@@ -29,6 +29,8 @@ export async function registerForEvents(app: FastifyInstance) {
       const { eventId } = request.params;
       const { name, email } = request.body;
 
+      console.log('Registering attendee:', { eventId, name, email });
+
       const attendeeFromEmail = await prisma.attendee.findUnique({
         where: {
           eventId_email: {
