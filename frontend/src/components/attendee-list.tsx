@@ -54,7 +54,7 @@ export function AttendeeList() {
 
   useEffect(() => {
     const url = new URL(
-      "http://localhost:3333/events/3fa014e6-f6a3-4928-86ff-5732d1dccd90/attendees"
+      "http://localhost:3333/events/8e6fde06-0da4-44f0-8ace-e1b67383281f/attendees"
     );
 
     url.searchParams.set("pageIndex", String(page - 1));

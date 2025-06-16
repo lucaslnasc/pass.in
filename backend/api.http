@@ -10,7 +10,7 @@ Content-Type: application/json
 
 ###
 // Adiciona um participante a um evento específico (identificado pelo ID do evento)
-POST http://localhost:3333/events/1525ddd3-5296-44cb-9ae9-9963ec4c558e/attendees
+POST http://localhost:3333/events/8e6fde06-0da4-44f0-8ace-e1b67383281f/attendees
 Content-Type: application/json
 
 {
@@ -21,21 +21,21 @@ Content-Type: application/json
 ###
 
 // Obtém os detalhes de um evento específico (identificado pelo ID do evento)
-GET http://localhost:3333/events/1525ddd3-5296-44cb-9ae9-9963ec4c558e
+GET http://localhost:3333/events/8e6fde06-0da4-44f0-8ace-e1b67383281f
 
 ###
 
 // Obtém a lista de participantes de um evento específico (identificado pelo ID do participante)
-GET http://localhost:3333/attendees/1/badge
+GET http://localhost:3333/attendees/18/badge
 
 ###
 
 // Realiza o check-in de um participante em um evento específico (identificado pelo ID do participante)
-GET http://localhost:3333/attendees/1/check-in
+GET http://localhost:3333/attendees/18/check-in
 
 ###
 
 // Obtém a lista de participantes de um evento específico com base em uma consulta (query string)
-GET http://localhost:3333/events/1525ddd3-5296-44cb-9ae9-9963ec4c558e/attendees?
+GET http://localhost:3333/events/8e6fde06-0da4-44f0-8ace-e1b67383281f/attendees?
 
 // 1525ddd3-5296-44cb-9ae9-9963ec4c558e
